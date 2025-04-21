@@ -1,0 +1,20 @@
+.who-we-are {
+  padding: 2rem;
+  background-color: hwb(0 100% 0%);
+  text-align: center;
+  color: #000000;
+  font-family: 'Inter', sans-serif; /* Apply Inter font */
+}
+
+.who-we-are h2 {
+  font-size: 20px; /* Set font size to 20px */
+  font-weight: bold; /* Make the text bold */
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+.who-we-are p {
+    line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}

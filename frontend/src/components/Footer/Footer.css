@@ -1,0 +1,32 @@
+/* filepath: c:\Users\Admin\Desktop\bookstore\frontend\src\components\Footer\Footer.css */
+.footer {
+  padding: 1rem;
+  background-color:#1D7B84;
+  color: white;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+  color: #ccc;
+}
