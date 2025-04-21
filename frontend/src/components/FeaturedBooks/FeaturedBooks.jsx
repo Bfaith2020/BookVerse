@@ -1,17 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./FeaturedBooks.css";
 
 // Reusable BookCategory Component
 const BookCategory = ({ title, description, books }) => {
   return (
-    <div className="book-category">
+    <div className="book-category slide-in">
       <div className="category-header">
         <h3>{title}</h3>
         <p>{description}</p>
       </div>
       <div className="book-grid">
         {books.map((book, index) => (
-          <div key={index} className="book-card">
+          <div key={index} className="book-card slide-in">
             <img src={book.src} alt={book.alt} />
           </div>
         ))}
@@ -21,6 +21,27 @@ const BookCategory = ({ title, description, books }) => {
 };
 
 const FeaturedBooks = () => {
+  useEffect(() => {
+    const handleScrollAnimation = () => {
+      const elements = document.querySelectorAll(".slide-in");
+      elements.forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          element.classList.add("visible");
+        } else {
+          element.classList.remove("visible");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScrollAnimation);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScrollAnimation);
+    };
+  }, []);
+
   const popularBooks = [
     { src: "/assets/book1.jpg", alt: "Book 1" },
     { src: "/assets/bookm.jpg", alt: "Book 2" },
@@ -38,7 +59,7 @@ const FeaturedBooks = () => {
 
   return (
     <div className="featured-books">
-      <h2>Featured Books</h2>
+      <h2 className="slide-in">Featured Books</h2>
       <BookCategory
         title="Popular"
         description="Explore our collection of popular books that have captivated readers worldwide. These titles are celebrated for their compelling stories and unforgettable characters."

@@ -84,6 +84,19 @@
   }
 }
 
+/* Initial state for sliding elements */
+.slide-in {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Visible state when the element is in view */
+.slide-in.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .book-card img {
