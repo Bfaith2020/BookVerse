@@ -13,7 +13,8 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <h1 className="logo">Bookverse</h1>
+        <LInk to = "/"> <h1 className="logo">Bookverse</h1></LInk>
+       
         <button className="hamburger-menu" onClick={toggleMenu}>
           ☰
         </button>
